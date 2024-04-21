@@ -14,7 +14,10 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: mizunomi32/rails-base-images
+          images: mizunomi32/rails-build-base-images
+          tags: |
+            type=ref,event=branch
+            type=sha
       - name: Log in to Docker Hub
         uses: docker/login-action@v1
         with:
